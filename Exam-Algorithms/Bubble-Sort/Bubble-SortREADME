@@ -1,0 +1,35 @@
+Bubble Sort 
+Bubble Sort is a comparision based sorting algorithm that compares the next and previous values to sort their relative positions 
+till the entire stack has been sorted in ascending/descending order.
+
+The logic of the algorith,:-
+1. Compare adjacent values
+2.Swap if one is greater/smaller than the other (BASED ON ASCENDING OR DESCENDING NATURE OF STACK)
+3.Continues till it reaches the end of file 
+4. Repeats for each pass till the entire stack is sorted
+
+Example: ascending
+[3,5,2,7] (Compared 3 and 5 no swap)
+
+first pass:
+[3,2,5,7] (Compared 5 and 2 Swap found and swapped)
+
+second pass:
+[2,3,5,7] (Compared 5 and 7 and 3 and 2 found swap for 3 and 2 didnt find one for 5 and 7 so swapped 3 and 2)
+
+third pass:
+no swaps found so sorted
+
+What makes your code efficient?
+
+1.Make use of swap flags. This helps reduce excess looping and your code going through each value and check each value
+A boolean Flag named swap tracks where swap occured in a pass. If no swaps occur the stack is already sorted therefore
+the bubble sort program outputs result without going through the entire stack.
+
+2.Reduced Comparisions
+After every pass, one value is set to be in the maximum position which is true. Therefore after each pass
+reduce the number of total values and exclude the already sorted value.
+This makes the inner loop shorted each time making ur code quicker and more efficient.
+
+
+
