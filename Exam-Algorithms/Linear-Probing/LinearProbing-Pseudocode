@@ -1,0 +1,71 @@
+DECLARE HashTable : ARRAY[0:TableSize] OF INTEGER
+DECLARE TableSize : INTEGER
+DECLARE Key : INTEGER
+DECLARE Address : INTEGER
+DECLARE I : INTEGER
+DECLARE J : INTEGER
+DECLARE Stored : BOOLEAN
+
+#INSERTING VALUES IN HASH TABLE USING HASHING ALGORITHM
+
+PROCEDURE Insert(Key)
+
+    Address ← Key MOD TableSize
+    Stored ← FALSE
+
+    FOR I ← Address TO TableSize - 1
+
+        IF HashTable[I] = -1 THEN
+            HashTable[I] ← Key
+            Stored ← TRUE
+        ENDIF
+
+    NEXT I
+
+    IF Stored = FALSE THEN
+
+        FOR J ← 0 TO Address - 1
+
+            IF HashTable[J] = -1 THEN
+                HashTable[J] ← Key
+                Stored ← TRUE
+            ENDIF
+
+        NEXT J
+
+    ENDIF
+
+    IF Stored = FALSE THEN
+        OUTPUT "Hash table is full."
+    ENDIF
+
+ENDPROCEDURE
+
+#SEARCHING FOR A VALUE IN THE HASH TABLE USING LINEAR PROBING
+
+FUNCTION Search(Key) RETURNS INTEGER
+
+    Address ← Key MOD TableSize
+    Found ← FALSE
+
+    FOR I ← Address TO TableSize - 1
+
+        IF HashTable[I] = Key THEN
+            Found ← TRUE
+            RETURN I
+        ENDIF
+
+    NEXT I
+
+    FOR J ← 0 TO Address - 1
+
+        IF HashTable[J] = Key THEN
+            Found ← TRUE
+            RETURN J
+        ENDIF
+
+    NEXT J
+
+    RETURN -1
+
+ENDFUNCTION
