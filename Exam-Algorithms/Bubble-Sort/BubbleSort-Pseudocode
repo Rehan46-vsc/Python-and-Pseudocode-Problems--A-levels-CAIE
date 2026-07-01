@@ -1,0 +1,22 @@
+DECLARE Boundary : INTEGER
+DECLARE NoSwaps : BOOLEAN
+DECLARE Temp : INTEGER
+DECLARE J : INTEGER
+
+Boundary ← LENGTH(Array) - 1
+
+REPEAT
+    NoSwaps ← TRUE
+
+    FOR J ← 0 TO Boundary - 1
+        IF Array[J] > Array[J + 1] THEN
+            Temp ← Array[J]
+            Array[J] ← Array[J + 1]
+            Array[J + 1] ← Temp
+            NoSwaps ← FALSE
+        ENDIF
+    NEXT J
+
+    Boundary ← Boundary - 1
+
+UNTIL NoSwaps = TRUE
