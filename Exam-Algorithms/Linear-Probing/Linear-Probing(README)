@@ -1,0 +1,10 @@
+# Linear Probing
+
+## Overview
+Linear probing resolves collisions in a hash table by checking the next available position until an empty slot is found. If the end of the table is reached, the search wraps around to the beginning.
+
+## Efficiency
+- Uses the **MOD** operator to calculate the initial address in constant time.
+- Stops searching immediately once an empty slot or the required value is found, avoiding unnecessary comparisons.
+- Wraps around to the beginning of the table, ensuring every location is checked before reporting that the table is full.
+- Stores all data in a single array, so no additional memory is needed apart from the table itself.
