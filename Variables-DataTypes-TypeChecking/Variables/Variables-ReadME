@@ -1,0 +1,26 @@
+Variables are one of the most basic and essential concepts in programming, used to store values.
+In programming, we often need a named storage location to store the data or values. Using variables, we can store the data in our program and access it afterward.
+For example, lets say you have a log in system where you need to store names of students and their corresponding password
+Without a label for their name and their password you and the computer could often mix up the students name and their password
+therefore we create two varaibles named Student_Name and Student_Password and store student data respectively
+
+Lets say John stores his password *****
+Student_Name<-"John"
+Student_Password<-*****
+ 
+We use <- when assigning values in pseudocode to varaibles
+and = when assigning values in python to variables
+
+Variables can also store the result of operations Like
+SquareOfNum<-x*x
+SquareOfNum=x*x
+
+Note that in A-levels your variable name can not just be something hollow it must store the essence of data being stored in the variable
+
+Lastly
+Type of varaible must be declared in pseudocode but it should not necesserily be declared in python
+DECLARE Student_ID:Integer
+Student_ID=0
+
+However to clarify your data type you could use comments(#Hello) to ensure full marks
+#DECLARE Student_ID:Integer
