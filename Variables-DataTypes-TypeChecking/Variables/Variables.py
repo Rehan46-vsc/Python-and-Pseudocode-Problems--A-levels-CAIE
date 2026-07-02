@@ -1,4 +1,5 @@
-#As we just learnt the gist of variables and what they mean in coding we will be learning how variables can be used in python 
+#This is a comment,these will not come up in your final output and just act as a medium of me to guide you without causing any errors
+# #As we just learnt the gist of variables and what they mean in coding we will be learning how variables can be used in python 
 #and how they differ from other programming languages and pseudocode
 
 #Variables are defined with the assignment operator, “=”. Python is dynamically typed, meaning that variables can be assigned without declaring their type, and
