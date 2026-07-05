@@ -1,0 +1,32 @@
+DECLARE myList : ARRAY[0:9] OF INTEGER
+DECLARE upperBound : INTEGER
+DECLARE lowerBound : INTEGER
+DECLARE index : INTEGER
+DECLARE item : INTEGER
+DECLARE found : BOOLEAN
+upperBound ← 9
+lowerBound ← 0
+OUTPUT "Please enter item to be found"
+INPUT item
+found ← FALSE # At the beginning we assume the item has NOT been found.
+REPEAT # Start repeating the search until either: 1. The item is found. 2. The search can no longer continue.
+    index ← INT ( (upperBound + lowerBound) / 2 ) # Find the middle index. Used for comparision.
+    IF item = myList[index] # Check whether the middle element is the target value.
+    THEN
+        found ← TRUE  # If it is, set found to TRUE to end loop
+    ENDIF
+    IF item > myList[index] #takes upper half
+    THEN
+        lowerBound ← index + 1 # ignores the left half and continue searching the right half.
+    ENDIF
+    IF item < myList[index] #takes lower half
+    THEN
+        upperBound ← index - 1
+    ENDIF
+UNTIL (found = TRUE) OR (lowerBound = upperBound) #boasts efficiency
+IF found
+THEN
+    OUTPUT "Item found"
+ELSE
+    OUTPUT "Item not found"
+ENDIF
