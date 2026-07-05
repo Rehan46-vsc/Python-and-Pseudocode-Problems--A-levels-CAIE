@@ -1,0 +1,6 @@
+A binary search usually takes far fewer comparisons than a linear search to find an item in a list.
+For example, if a list had 1024 elements, the maximum number of comparisons for a binary
+search would be 16, whereas a linear search could take up to 1024 comparisons. That is because 
+a binary search halves the list size each search. It compares to middle value of the halved list each time to the original value and takes either the lower or the upper half of the list based on the comparision
+
+Note that binary search only works on sorted lists,.
