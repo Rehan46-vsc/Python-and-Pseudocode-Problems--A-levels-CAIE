@@ -1,0 +1,80 @@
+#In Cambridge pseudocode, variables must be declared before they are used.
+#A declaration tells the computer the variable's name and what type of data it will store.
+
+#General syntax:
+
+DECLARE VariableName : DataType
+
+#Some common data types are:
+#INTEGER - Whole numbers
+#REAL - Decimal numbers
+#STRING - Text
+#CHAR - A single character
+#BOOLEAN - TRUE or FALSE
+
+#Examples:
+
+DECLARE Product : INTEGER
+DECLARE StudentName : STRING
+DECLARE Passed : BOOLEAN
+
+#After declaring a variable, a value can be assigned using the assignment operator (←).
+
+Product ← 2 * 3
+#The result of 2 * 3 is stored in the variable Product.
+
+#Variables can also store text.
+
+StudentName ← "Rehan"
+
+#Variables can be reassigned.
+
+StudentName ← "Sara"
+#The previous value ("Rehan") is replaced with the new value ("Sara").
+
+#Variables can be used in calculations.
+
+DECLARE M : INTEGER
+DECLARE X : INTEGER
+DECLARE C : INTEGER
+DECLARE Y : INTEGER
+
+M ← 43
+X ← 21
+C ← 63
+
+Y ← M * X + C
+
+OUTPUT Y
+
+#Variables can store user input.
+
+DECLARE Age : INTEGER
+DECLARE NextAge : INTEGER
+
+INPUT Age
+
+NextAge ← Age + 1
+
+OUTPUT NextAge
+
+#Arrays must also be declared before they are used.
+
+DECLARE StudentNames : ARRAY[1:3] OF STRING
+
+StudentNames[1] ← "Rehan"
+StudentNames[2] ← "Sara"
+StudentNames[3] ← "Ali"
+
+OUTPUT StudentNames[2]
+
+#Basic rules for Cambridge pseudocode:
+#1. Every variable must be declared before use.
+#2. Use the assignment operator (←), not "=".
+#3. Each declaration should be on its own line.
+#4. Variable names should be meaningful.
+#5. Arrays must also be declared before they are used.
+
+#Remember:
+#Unlike Python, Cambridge pseudocode is statically typed.
+#This means every variable must have its data type declared before a value can be assigned.
