@@ -1,0 +1,21 @@
+DECLARE numbers : ARRAY[0:6] OF INTEGER (Our list of values that havent been sorted yet.)
+DECLARE index : INTEGER (Address of the data.)
+DECLARE place : INTEGER (Starts one position before the key and moves left through the sorted section to find where the key belongs.)
+DECLARE key : INTEGER (Temporarily stores the value being inserted into its correct position.)
+DECLARE temp: INTEGER (Same purpose as in file handling, to temporarily store data)
+
+#inputting data in ARRAY
+numbers ← [7, 3, 5, 1, 8, 6, 2]
+
+SORTING
+FOR index<- 1 to 6 (Start from the second element)
+    key<-numbers[index] (Store the current value)
+    place<-index-1 (Begin with the previous element)
+    IF numbers[place]>key THEN
+        WHILE place >= lowerBound AND numbers[place] > key (Continue while larger values are found)
+        numbers[place + 1] ← numbers[place] (Shift the larger value one position right)
+        place ← place - 1 (Move one position left)
+        ENDWHILE
+
+        numbers[place + 1] ← key (Insert the key into its correct position)
+NEXT index
