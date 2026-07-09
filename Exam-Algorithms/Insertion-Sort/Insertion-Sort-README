@@ -1,1 +1,44 @@
+The bubble sort works well for short lists and partially sorted lists. An insertion sort will also
+work well for these types of list. An insertion sort sorts data in a list into alphabetical or
+numerical order by placing each item in turn in the correct position in a sorted list. An insertion
+sort works well for incremental sorting, where elements are added to a list one at a time over an
+extended period while keeping the list sorted.
 
+So whats the difference between insertion sort and bubble sort?
+So in a bubble sort your value to be sorted keeps shifting down one loop at a time
+whereas in an insertion sort your value to be sorted checks preceeding values and ends up in the final position at once. Therefore it doesnt run in a loop multiple times to set its place. Hence it is much more effective
+
+| Bubble Sort                                     | InsertionSort                                  |
+| 
+| Compares adjacent elements                      | Takes one element at atime                     |
+| Swaps neighbours                                | Shifts larger elementsright                    |
+| Largest element reaches the end after each pass | Sorted section grows by one element eachpass   |
+| Uses many swaps                                 | Uses shifting followed by oneinsertion         |
+| Continues until no swaps are needed             | Continues until every element has beeninserted |
+
+
+How does it work?
+It works by dividing the list into:
+
+A sorted section (left)
+An unsorted section (right)
+
+Starting from the second element, each element is picked up
+and inserted into its correct position within the sorted
+section.
+
+The sorted section grows by one element after every pass.
+
+Example:
+
+Initial:
+[7] 3 5 1
+
+After first pass:
+[3 7] 5 1
+
+After second pass:
+[3 5 7] 1
+
+After third pass:
+[1 3 5 7]
