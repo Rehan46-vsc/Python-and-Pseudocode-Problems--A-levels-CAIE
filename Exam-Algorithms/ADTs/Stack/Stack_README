@@ -1,0 +1,7 @@
+A stack is a LIFO (last-in, first-out) data structure - there are two operations and we will require an additional pointer variable that points to the top element in the stack
+
+Push: if the stack isn't full, a new item will be added to the top of the stack and the top pointer will be incremented
+Pop: if the stack isn't empty, the top item will be removed and returned from the stack and the top pointer will be decremented
+
+In codes for pseudocode and python we will be creating different modules for push and pop operations
+in a stack.
