@@ -1,0 +1,47 @@
+DECLARE StackSize: INTEGER
+DECLARE Top: INTEGER
+DECLARE Stack: Array[0:StackSize-1] OF STRING
+DECLARE Item : STRING
+
+//inputting elements in the stack using the push PROCEDURE
+
+	
+
+//let's reset the stack first 
+PROCEDURE ResetStack()
+    Top<-0
+ENDPROCEDURE
+
+
+PROCEDURE Push(Item : CHAR)
+    
+
+    //check stack isn't full
+	IF Top < STACK_SIZE THEN
+		Top <- Top + 1
+		Stack[Top] <- Item //push item to top position
+		OUTPUT "Pushed ", Item, " at index ", Top
+	ELSE
+		OUTPUT "Stack is full - can't push ", Item
+	ENDIF
+ENDPROCEDURE
+
+FUNCTION Pop() RETURNS STRING
+
+	IF Top > 0 THEN
+		Item <- Stack[Top] //get item at top of stack
+		Top <- Top - 1
+		RETURN Item
+	ELSE
+		OUTPUT "Error - nothing to pop"
+		RETURN ""
+	ENDIF
+
+ENDFUNCTION
+
+for i: 1 TO StackSize
+    OUTPUT "Enter element to be inserted"
+    INPUT a
+    PUSH(a)
+Next i 
+
