@@ -1,0 +1,36 @@
+DECLARE QUEUE_SIZE: INTEGER
+DECLARE FrontPointer, EndPointer : INTEGER
+DECLARE Queue : ARRAY[1:QUEUE_SIZE] OF STRING
+
+OUTPUT "Queue Size?:"
+INPUT a
+
+PROCEDURE Enqueue(data : STRING)
+    //if queue not full
+    IF EndPointer < QUEUE_SIZE THEN
+        //handle case of empty queue
+        IF FrontPointer = 0 THEN
+            FrontPointer <- 1
+        ENDIF
+        EndPointer <= EndPointer + 1
+        Queue[EndPointer] <- data //add data to current position
+        OUTPUT "Enqueued \"", data, "\" at index ", EndPointer
+    ELSE
+        OUTPUT "Can't enqueue \"", data, "\" - queue full"
+    ENDIF
+ENDPROCEDURE
+
+FUNCTION Dequeue() RETURNS STRING
+
+    //check queue not empty - handles empty cases when no data has been enqueued and when all data has been dequeued
+    IF FrontPointer > 0 AND FrontPointer <= EndPointer THEN
+        DECLARE data : STRING
+        data <- Queue[FrontPointer] //get front item
+        FrontPointer <- FrontPointer + 1
+        RETURN data
+    ELSE
+        OUTPUT "Queue empty - nothing to dequeue"
+        RETURN ""
+    ENDIF
+
+ENDFUNCTION
