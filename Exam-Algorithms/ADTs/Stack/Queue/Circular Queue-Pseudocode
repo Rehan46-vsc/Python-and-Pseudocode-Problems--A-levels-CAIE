@@ -1,0 +1,38 @@
+CONSTANT QUEUE_SIZE = 5
+DECLARE FrontPointer, EndPointer, NumItemsInQueue : INTEGER
+DECLARE Queue : ARRAY[1:QUEUE_SIZE] OF STRING
+
+PROCEDURE Enqueue(item : STRING)
+    //check queue not full
+    IF NumItemsInQueue < QUEUE_SIZE THEN
+
+        EndPointer <-- EndPointer + 1
+
+        //wrap-around if required
+        IF EndPointer > QUEUE_SIZE THEN
+            EndPointer <-- 1
+        ENDIF
+        Queue[EndPointer] <-- item //add item at end of queue
+        NumItemsInQueue <-- NumItemsInQueue + 1
+        OUTPUT "Enqueued ", item, " at index ", NUM_TO_STR(EndPointer)
+    ELSE
+        OUTPUT "Queue full - can't enqueue ", item
+    ENDIF
+ENDPROCEDURE
+
+FUNCTION Dequeue() RETURNS STRING
+    //check queue not empty
+    IF NumItemsInQueue > 0 THEN
+
+        FrontPointer <-- FrontPointer + 1
+
+        //wrp around if required
+        IF FrontPointer > QUEUE_SIZE THEN
+            FrontPointer <-- 1
+        ENDIF
+        NumItemsInQueue <-- NumItemsInQueue - 1
+        RETURN Queue[FrontPointer]
+    ELSE
+        RETURN "Queue empty - can't dequeue"
+    ENDIF
+ENDFUNCTION
