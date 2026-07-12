@@ -1,0 +1,14 @@
+A queue is a FIFO (First-In, First-Out) data structure, meaning the first element inserted is the first element removed. To manage a queue, two pointers are used:
+
+Front pointer (Head): Points to the first element in the queue.
+End pointer (Tail): Points to the last element in the queue.
+
+Queues support two fundamental operations:
+
+Enqueue: Adds a new element to the end of the queue, provided the queue is not full.
+Dequeue: Removes and returns the element at the front of the queue, provided the queue is not empty.
+
+There are two common types of queues:
+
+Linear Queue: Elements are added sequentially. Once the end pointer reaches the final position in the array, no more elements can be added, even if earlier elements have been removed from the front.
+Circular Queue: Elements are also added sequentially, but when the end pointer reaches the last position and there is available space at the beginning of the queue, it wraps around to the start of the array. This allows the queue to reuse freed positions efficiently and avoids wasting space.
